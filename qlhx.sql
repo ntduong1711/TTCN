@@ -145,7 +145,7 @@ create table tblphieuchi(
 
 create table tblhopdongthue(
 	mahopdong char(5) primary key,
-	mancc char(6) foreign key references tblcungcaptrangthietbi(mancc),
+	mancc char(6) foreign key references tblnhacungcap(mancc),
 	masukien char(6) foreign key references tblsukien(masukien),
 	manhanvien char(10) foreign key references tblnhanvien(manhanvien),
 	ngaylap date not null,
@@ -154,7 +154,7 @@ create table tblhopdongthue(
 
 create table tblchitiethopdong(
 	mahopdong char(5) primary key,
-	matrangthietbi char(4) foreign key references tblcungcaptrangthietbi(matrangthietbi),
+	matrangthietbi char(4) foreign key references tbltrangthietbi(matrangthietbi),
 	soluong int not null check(soluong>0),
 	dongia float not null check(dongia>0),
 	ngaythue date not null,
