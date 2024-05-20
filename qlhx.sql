@@ -64,6 +64,7 @@ create table tblhoadonmuatailieu(
 	primary key (mahocvien,mahoadon),
 	tongtien float not null check (tongtien>0),
 	ngaydangky date not null,
+	trangthai nvarchar(20),
 	ngaynop date not null,
 	minhchung nvarchar(200))
 
@@ -125,15 +126,15 @@ create table tblnhataitro(
 	diachi nvarchar(100) not null,
 	masothue char(10) not null,
 	sodienthoai char(10) not null,
-	email char(50) not null)
+	email char(50) not null,
+trangthai nvarchar(50) not null)
 
 create table tblnhantaitro(
 	mantt char(5),
 	masukien char(6),
 	primary key(mantt,masukien),
 	ngaynhan date not null,
-	trangthainhantaitro nvarchar(20),
-	trangthaixetduyet nvarchar(20))
+	trangthainhantaitro nvarchar(20))
 
 create table tblphieuchi(
 	maphieuchi char(5) primary key,
