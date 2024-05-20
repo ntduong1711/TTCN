@@ -65,7 +65,7 @@ create table tblhoadonmuatailieu(
 	tongtien float not null check (tongtien>0),
 	ngaydangky date not null,
 	trangthai nvarchar(20),
-	ngaynop date not null,
+	ngaynop date,
 	minhchung nvarchar(200))
 
 create table tblchitiethoadon(
@@ -269,11 +269,11 @@ insert into tbldondangkydanhgia(mahocvien, madanhgia, ngaydangky, ketquadanhgia)
 insert into tbldondangkydanhgia(mahocvien, madanhgia, ngaydangky, ketquadanhgia)values ('HV10222008','N171222','12-08-2022',N'Trung bình')
 insert into tbldondangkydanhgia(mahocvien, madanhgia, ngaydangky, ketquadanhgia)values ('HV10222010','N170622','06-08-2022',N'Tốt')
 
-insert into tblhoadonmuatailieu(mahoadon,mahocvien,tongtien,ngaydangky,ngaynop) values ('B001','HV10122001',50000,'12-20-2021','12-20-2021')
-insert into tblhoadonmuatailieu(mahoadon,mahocvien,tongtien,ngaydangky,ngaynop) values ('B002','HV10123002',60000,'12-25-2022','12-25-2022')
-insert into tblhoadonmuatailieu(mahoadon,mahocvien,tongtien,ngaydangky,ngaynop) values ('B003','HV00123004',60000,'12-22-2023','12-22-2023')
-insert into tblhoadonmuatailieu(mahoadon,mahocvien,tongtien,ngaydangky,ngaynop) values ('B004','HV00223007',70000,'12-23-2022','12-23-2022')
-insert into tblhoadonmuatailieu(mahoadon,mahocvien,tongtien,ngaydangky,ngaynop) values ('B005','HV10222008',60000,'12-24-2023','12-24-2023')
+insert into tblhoadonmuatailieu(mahoadon,mahocvien,tongtien,trangthai,ngaydangky,ngaynop) values ('B001','HV10122001',50000,N'Đã thanh toán','12-20-2021','12-20-2021')
+insert into tblhoadonmuatailieu(mahoadon,mahocvien,tongtien,trangthai,ngaydangky,ngaynop) values ('B002','HV10123002',60000,N'Đã thanh toán','12-25-2022','12-25-2022')
+insert into tblhoadonmuatailieu(mahoadon,mahocvien,tongtien,trangthai,ngaydangky) values ('B003','HV00123004',60000,N'Đã thanh toán','12-22-2024')
+insert into tblhoadonmuatailieu(mahoadon,mahocvien,tongtien,trangthai,ngaydangky,ngaynop) values ('B004','HV00223007',70000,N'Đã thanh toán','12-23-2022','12-23-2022')
+insert into tblhoadonmuatailieu(mahoadon,mahocvien,tongtien,trangthai,ngaydangky) values ('B005','HV10222008',60000,N'Đã thanh toán','12-24-2023')
 
 insert into tblchitiethoadon(mahoadon,matailieu,soluong,thanhtien) values ('B001','TL0101',1,50000)
 insert into tblchitiethoadon(mahoadon,matailieu,soluong,thanhtien) values ('B002','TL0202',1,60000)
@@ -318,14 +318,15 @@ insert into tblnhacungcap(mancc,tenncc,diachi,masothue,sodienthoai,email) values
 insert into tblnhacungcap(mancc,tenncc,diachi,masothue,sodienthoai,email) values('NCC002',N'Hòa Bình Event',N'27-29 Đoàn Thị Điểm, Quốc Tử Giám, Đống Đa, Hà Nội','8328228347','0939311911','info@hoabinhevents.com')
 insert into tblnhacungcap(mancc,tenncc,diachi,masothue,sodienthoai,email) values('NCC003',N'Sao Việt Event',N'Liền kề 26 ô số 36, Khu Đô Thị Văn Phú – P.Phú La – Q.Hà Đông – TP. Hà Nội','8328856498','0969701986','saovietevent2022@gmail.com')
 
-insert into tblnhataitro(mantt,tenntt,diachi,masothue,sodienthoai,email) values('TT001','Vietcombank',N'198 Trần Quang Khải, Hoàn Kiếm, Hà Nội','0100112437','0243824352','contact@vcb.vn')
-insert into tblnhataitro(mantt,tenntt,diachi,masothue,sodienthoai,email) values('TT002','VietinBank',N'108 Trần Hưng Đạo, quận Hoàn Kiếm, TP. Hà Nội, Việt Nam','0100111948','1900558868','contact@vietinbank.vn')
-insert into tblnhataitro(mantt,tenntt,diachi,masothue,sodienthoai,email) values('TT003','TPBank',N'Tòa nhà TPBank, 57 Lý Thường Kiệt, Quận Hoàn Kiếm, Hà Nội','0102744865','0243768368','dichvu_khachhang@tpb.com.vn')
+insert into tblnhataitro(mantt,tenntt,diachi,masothue,sodienthoai,email,trangthai) values('TT001','Vietcombank',N'198 Trần Quang Khải, Hoàn Kiếm, Hà Nội','0100112437','0243824352','contact@vcb.vn',N'Chính thức')
+insert into tblnhataitro(mantt,tenntt,diachi,masothue,sodienthoai,email,trangthai) values('TT002','VietinBank',N'108 Trần Hưng Đạo, quận Hoàn Kiếm, TP. Hà Nội, Việt Nam','0100111948','1900558868','contact@vietinbank.vn',N'Chính thức')
+insert into tblnhataitro(mantt,tenntt,diachi,masothue,sodienthoai,email,trangthai) values('TT003','TPBank',N'Tòa nhà TPBank, 57 Lý Thường Kiệt, Quận Hoàn Kiếm, Hà Nội','0102744865','0243768368','dichvu_khachhang@tpb.com.vn',N'Chính thức')
+insert into tblnhataitro(mantt,tenntt,diachi,masothue,sodienthoai,email,trangthai) values('TT004','Techcombank',N'123 Hoàn Kiếm, Hà Nội','0102756656','057575757469','dichvu_khachhang@tech.com.vn',N'Tiềm năng')	 
 
-insert into tblnhantaitro(mantt,masukien,ngaynhan,trangthainhantaitro,trangthaixetduyet) values('TT001','SK001','09-20-2023',N'Đã nhận',N'Đã duyệt')
-insert into tblnhantaitro(mantt,masukien,ngaynhan,trangthainhantaitro,trangthaixetduyet) values('TT002','SK002','09-25-2023',N'Đã nhận',N'Đã duyệt')
-insert into tblnhantaitro(mantt,masukien,ngaynhan,trangthainhantaitro,trangthaixetduyet) values('TT003','SK001','03-20-2024',N'Đã nhận',N'Đã duyệt')
-insert into tblnhantaitro(mantt,masukien,ngaynhan,trangthainhantaitro,trangthaixetduyet) values('TT001','SK002','03-25-2024',N'Đã nhận',N'Đã duyệt')
+insert into tblnhantaitro(mantt,masukien,ngaynhan,trangthainhantaitro) values('TT001','SK001','09-20-2023',N'Đã nhận')
+insert into tblnhantaitro(mantt,masukien,ngaynhan,trangthainhantaitro) values('TT002','SK002','09-25-2023',N'Đã nhận')
+insert into tblnhantaitro(mantt,masukien,ngaynhan,trangthainhantaitro) values('TT003','SK001','03-20-2024',N'Đã nhận')
+insert into tblnhantaitro(mantt,masukien,ngaynhan,trangthainhantaitro) values('TT001','SK002','03-25-2024',N'Đã nhận')
 
 insert into tblhopdongthue(mahopdong,mancc,manhanvien,masukien,ngaylap,trangthaixetduyet)values('HD001','NCC001','NV10180006','SK001','10-20-2023',N'Đã duyệt')
 insert into tblhopdongthue(mahopdong,mancc,manhanvien,masukien,ngaylap,trangthaixetduyet)values('HD002', 'NCC002','NV10180006','SK001','10-20-2023',N'Đã duyệt')
