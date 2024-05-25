@@ -145,7 +145,7 @@ create table tblphieuchi(
 
 create table tblhopdongthue(
 	mahopdong char(5) primary key,
-	mancc char(6) foreign key references tblnhacungcap(mancc),
+	mancc char(6) foreign key references tblcungcaptrangthietbi(mancc),
 	masukien char(6) foreign key references tblsukien(masukien),
 	manhanvien char(10) foreign key references tblnhanvien(manhanvien),
 	ngaylap date not null,
@@ -154,7 +154,7 @@ create table tblhopdongthue(
 
 create table tblchitiethopdong(
 	mahopdong char(5) primary key,
-	matrangthietbi char(4) foreign key references tbltrangthietbi(matrangthietbi),
+	matrangthietbi char(4) foreign key references tblcungcaptrangthietbi(matrangthietbi),
 	soluong int not null check(soluong>0),
 	dongia float not null check(dongia>0),
 	ngaythue date not null,
@@ -237,6 +237,7 @@ insert into tblnhanvien(manhanvien, tennhanvien, gioitinh, sodienthoai, ngaysinh
 insert into tblnhanvien(manhanvien, tennhanvien, gioitinh, sodienthoai, ngaysinh, email, diachi, mabophan) values ('NV00192013', N'Nguyễn Văn Tài', 0, '0956781234','03-15-1992','nguyenvantai@gmail.com',N'35 Hoàng Quốc Việt, Cầu Giấy, Hà Nội','BP02')
 insert into tblnhanvien(manhanvien, tennhanvien, gioitinh, sodienthoai, ngaysinh, email, diachi, mabophan) values ('NV10186014', N'Trần Thị Thu', 1, '0945678901','06-20-1986','tranthithu@gmail.com',N'45 Lê Thanh Nghị, Hai Bà Trưng, Hà Nội','BP03')
 insert into tblnhanvien(manhanvien, tennhanvien, gioitinh, sodienthoai, ngaysinh, email, diachi, mabophan) values ('NV00183015', N'Đỗ Văn Hùng', 0, '0923456789','09-25-1983','dovanhung@gmail.com',N'55 Cầu Giấy, Cầu Giấy, Hà Nội','BP04')
+insert into tblnhanvien(manhanvien, tennhanvien, gioitinh, sodienthoai, ngaysinh, email, diachi, mabophan) values ('NV00183016', N'Nguyễn Thị Thúy Nga', 0, '0923455767','09-25-1988','thuynga@gmail.com',N'100 Cầu Giấy, Cầu Giấy, Hà Nội','BP06')
 
 insert into tblphieughidanh(maphieu, ngaytiepnhan, manhanvien, mahocvien) values ('P001','12-20-2021','NV10185002','HV10122001')
 insert into tblphieughidanh(maphieu, ngaytiepnhan, manhanvien, mahocvien) values ('P002','12-25-2022','NV10185002','HV10123002')
