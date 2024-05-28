@@ -1,0 +1,17 @@
+D:\03năm 3\C#\ttcn\ttcn\bin\Debug\ttcn.exe.config
+D:\03năm 3\C#\ttcn\ttcn\bin\Debug\ttcn.exe
+D:\03năm 3\C#\ttcn\ttcn\bin\Debug\ttcn.pdb
+D:\03năm 3\C#\ttcn\ttcn\obj\Debug\ttcn.csproj.AssemblyReference.cache
+D:\03năm 3\C#\ttcn\ttcn\obj\Debug\ttcn.hocvien.resources
+D:\03năm 3\C#\ttcn\ttcn\obj\Debug\ttcn.kyhoc.resources
+D:\03năm 3\C#\ttcn\ttcn\obj\Debug\ttcn.Properties.Resources.resources
+D:\03năm 3\C#\ttcn\ttcn\obj\Debug\ttcn.csproj.GenerateResource.cache
+D:\03năm 3\C#\ttcn\ttcn\obj\Debug\ttcn.csproj.CoreCompileInputs.cache
+D:\03năm 3\C#\ttcn\ttcn\obj\Debug\ttcn.exe
+D:\03năm 3\C#\ttcn\ttcn\obj\Debug\ttcn.pdb
+D:\03năm 3\C#\ttcn\ttcn\obj\Debug\ttcn.menu_qlyhv.resources
+D:\03năm 3\C#\ttcn\ttcn\obj\Debug\ttcn.lophoc.resources
+D:\03năm 3\C#\ttcn\ttcn\obj\Debug\ttcn.Forms.sukien.resources
+D:\03năm 3\C#\ttcn\ttcn\obj\Debug\ttcn.Forms.phieuchi.resources
+D:\03năm 3\C#\ttcn\ttcn\obj\Debug\ttcn.Forms.thongbao.resources
+D:\03năm 3\C#\ttcn\ttcn\obj\Debug\ttcn.Forms.xeplop.resources
