@@ -167,8 +167,9 @@ create table tblhopdongthue(
 	
 
 create table tblchitiethopdong(
-	mahopdong char(5) primary key,
-	matrangthietbi char(4) foreign key references tbltrangthietbi(matrangthietbi),
+	mahopdong char(5),
+	matrangthietbi char(4),
+	primary key (mahopdong,matrangthietbi),
 	soluong int not null check(soluong>0),
 	dongia float not null check(dongia>0),
 	ngaythue date not null,
@@ -377,14 +378,15 @@ insert into tblnhantaitro(mantt,masukien,trangthainhantaitro) values('TT004','SK
 insert into tblhopdongthue(mahopdong,mancc,manhanvien,masukien,ngaylap,trangthai)values('HD001','NCC001','NV10180006','SK001','10-20-2023',N'Đã duyệt')
 insert into tblhopdongthue(mahopdong,mancc,manhanvien,masukien,ngaylap,trangthai)values('HD002','NCC002','NV10180006','SK001','10-20-2023',N'Đã duyệt')
 insert into tblhopdongthue(mahopdong,mancc,manhanvien,masukien,ngaylap,trangthai)values('HD003','NCC001','NV00183015','SK002','04-10-2024',N'Đã duyệt')
-insert into tblhopdongthue(mahopdong,mancc,manhanvien,masukien,ngaylap,trangthai)values('HD004','NCC003','NV00183015','SK002','04-10-2024',N'Đã duyệt')
+insert into tblhopdongthue(mahopdong,mancc,manhanvien,masukien,ngaylap,trangthai)values('HD004','NCC002','NV00183015','SK003','04-10-2024',N'Đã duyệt')
 insert into tblhopdongthue(mahopdong,mancc,manhanvien,masukien,ngaylap,trangthai)values('HD005','NCC003','NV00183015','SK003','04-20-2024',N'Chưa duyệt')
 
 insert into tblchitiethopdong(mahopdong,matrangthietbi,soluong,dongia,ngaythue,ngaytra) values('HD001','E001',1,2000000,'09-20-2023','09-30-2023')
-insert into tblchitiethopdong(mahopdong,matrangthietbi,soluong,dongia,ngaythue,ngaytra)  values('HD002','E002',5,2500000,'09-20-2023','09-30-2023')
-insert into tblchitiethopdong(mahopdong,matrangthietbi,soluong,dongia,ngaythue,ngaytra)  values('HD003','E003',3,2400000,'03-25-2024','04-21-2024')
-insert into tblchitiethopdong(mahopdong,matrangthietbi,soluong,dongia,ngaythue,ngaytra)  values('HD004','E004',2,2000000,'03-25-2024','04-21-2024')
-insert into tblchitiethopdong(mahopdong,matrangthietbi,soluong,dongia,ngaythue,ngaytra)  values('HD005','E004',2,2000000,'04-25-2024','05-21-2024')
+insert into tblchitiethopdong(mahopdong,matrangthietbi,soluong,dongia,ngaythue,ngaytra)  values('HD001','E002',5,2500000,'09-20-2023','09-30-2023')
+insert into tblchitiethopdong(mahopdong,matrangthietbi,soluong,dongia,ngaythue,ngaytra)  values('HD002','E003',3,2400000,'10-25-2023','11-21-2023')
+insert into tblchitiethopdong(mahopdong,matrangthietbi,soluong,dongia,ngaythue,ngaytra)  values('HD003','E002',3,2500000,'04-25-2024','05-01-2024')
+insert into tblchitiethopdong(mahopdong,matrangthietbi,soluong,dongia,ngaythue,ngaytra)  values('HD004','E004',2,2000000,'04-25-2024','05-01-2024')
+insert into tblchitiethopdong(mahopdong,matrangthietbi,soluong,dongia,ngaythue,ngaytra)  values('HD005','E005',2,2000000,'04-25-2024','05-10-2024')
 
 insert into tblphieuchi(maphieuchi,masukien,manhanvien,trangthai) values('PC001','SK001','NV10182004',N'Đã duyệt')
 insert into tblphieuchi(maphieuchi,masukien,manhanvien,trangthai) values('PC002','SK002','NV10182004',N'Đã duyệt')
@@ -400,3 +402,8 @@ insert into tblcungcaptrangthietbi(mancc,matrangthietbi) values ('NCC001','E002'
 insert into tblcungcaptrangthietbi(mancc,matrangthietbi) values ('NCC002','E003')
 insert into tblcungcaptrangthietbi(mancc,matrangthietbi) values ('NCC002','E004')
 insert into tblcungcaptrangthietbi(mancc,matrangthietbi) values ('NCC003','E005')
+
+update tblhopdongthue
+set tongtien=soluong*dongia
+from tblhopdongthue inner join tblchitiethopdong on tblhopdongthue.mahopdong=tblchitiethopdong.mahopdong
+
