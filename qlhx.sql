@@ -77,7 +77,8 @@ create table tblhoadonmuatailieu(
 	tongtien float not null check (tongtien>0),
 	ngaydangky date not null,
 	hinhthucnop nvarchar(20) not null,
-	ngaynop date not null,
+	trangthainop nvarchar(20) not null,
+	ngaynop date,
 	check(ngaydangky<=ngaynop),
 	minhchung nvarchar(200))
 
@@ -313,11 +314,12 @@ insert into tblthamgia(mahocvien,malophoc) values ('HV10222008','LH08')
 insert into tblthamgia(mahocvien,malophoc) values ('HV10222008','LH03')
 insert into tblthamgia(mahocvien,malophoc) values ('HV10222010','LH10')
 
-insert into tblhoadonmuatailieu(mahoadon,mahocvien,tongtien,ngaydangky,hinhthucnop,ngaynop) values ('B001','HV10122001',50000,'12-20-2021',N'Chuyển khoản','12-20-2021')
-insert into tblhoadonmuatailieu(mahoadon,mahocvien,tongtien,ngaydangky,hinhthucnop,ngaynop) values ('B002','HV10123002',60000,'12-25-2022',N'Nộp trực tiếp','12-25-2022')
-insert into tblhoadonmuatailieu(mahoadon,mahocvien,tongtien,ngaydangky,hinhthucnop,ngaynop) values ('B003','HV00123004',60000,'12-22-2023',N'Chuyển khoản','12-22-2023')
-insert into tblhoadonmuatailieu(mahoadon,mahocvien,tongtien,ngaydangky,hinhthucnop,ngaynop) values ('B004','HV00223007',70000,'12-23-2022',N'Chuyển khoản','12-23-2022')
-insert into tblhoadonmuatailieu(mahoadon,mahocvien,tongtien,ngaydangky,hinhthucnop,ngaynop) values ('B005','HV10222008',60000,'12-24-2023',N'Nộp trực tiếp','12-24-2023')
+insert into tblhoadonmuatailieu(mahoadon,mahocvien,tongtien,ngaydangky,hinhthucnop,trangthainop,ngaynop) values ('B001','HV10122001',50000,'12-20-2021',N'Chuyển khoản',N'Đã nộp','12-20-2021')
+insert into tblhoadonmuatailieu(mahoadon,mahocvien,tongtien,ngaydangky,hinhthucnop,trangthainop,ngaynop) values ('B002','HV10123002',60000,'12-25-2022',N'Nộp trực tiếp',N'Đã nộp','12-25-2022')
+insert into tblhoadonmuatailieu(mahoadon,mahocvien,tongtien,ngaydangky,hinhthucnop,trangthainop,ngaynop) values ('B003','HV00123004',60000,'12-22-2023',N'Chuyển khoản',N'Đã nộp','12-22-2023')
+insert into tblhoadonmuatailieu(mahoadon,mahocvien,tongtien,ngaydangky,hinhthucnop,trangthainop) values ('B004','HV00223007',70000,'05-15-2024',N'Nộp trực tiếp',N'Chưa nộp')
+insert into tblhoadonmuatailieu(mahoadon,mahocvien,tongtien,ngaydangky,hinhthucnop,trangthainop) values ('B005','HV10222008',60000,'05-15-2024',N'Nộp trực tiếp',N'Chưa nộp')
+
 
 insert into tblchitiethoadon(mahoadon,matailieu,soluong,dongia) values ('B001','TL0101',1,50000)
 insert into tblchitiethoadon(mahoadon,matailieu,soluong,dongia) values ('B002','TL0202',1,60000)
@@ -403,7 +405,4 @@ insert into tblcungcaptrangthietbi(mancc,matrangthietbi) values ('NCC002','E003'
 insert into tblcungcaptrangthietbi(mancc,matrangthietbi) values ('NCC002','E004')
 insert into tblcungcaptrangthietbi(mancc,matrangthietbi) values ('NCC003','E005')
 
-update tblhopdongthue
-set tongtien=soluong*dongia
-from tblhopdongthue inner join tblchitiethopdong on tblhopdongthue.mahopdong=tblchitiethopdong.mahopdong
 
